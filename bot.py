@@ -55,10 +55,10 @@ class Bot(Client):
                 sys.exit()
         if FORCE_SUB_GROUP:
             try:
-                link = (await self.get_chat(FORCE_SUB_GROUP)).invite_link
+                link = (await self.get_chat(FORCE_SUB_CHANNEL2)).invite_link
                 if not link:
-                    await self.export_chat_invite_link(FORCE_SUB_GROUP)
-                    link = (await self.get_chat(FORCE_SUB_GROUP)).invite_link
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL2)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL2)).invite_link
                 self.invitelink2 = link
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
